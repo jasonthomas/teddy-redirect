@@ -7,5 +7,11 @@ from redirect.models import Url
 
 @cache_page(60 * 900)
 def get_short(request, short):
-    found = Url.objects.select_related('url').get(short=short)
-    return HttpResponseRedirect(found.url)
+    found = None
+
+    try: 
+        found = Url.objects.get(short=short)
+        #found = Url.objects.select_related('url').get(short=short)
+        return HttpResponseRedirect(found.url)
+    except Exception:
+        return HttpResponseRedirect("http://google.com")
