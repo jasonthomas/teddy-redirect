@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from teddy.views import get_short
+from teddy.redirect.views import get_short
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
