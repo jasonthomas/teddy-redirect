@@ -1,11 +1,12 @@
 from django.conf.urls.defaults import patterns, include, url
-from teddy.redirect.views import get_short
+import teddy.redirect.views
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^(.*)$', get_short),
+    url(r'^new$', teddy.redirect.views.new_short),
+    url(r'^(.*)$', teddy.redirect.views.get_short),
     # Examples:
     # url(r'^$', 'teddy.views.home', name='home'),
     # url(r'^teddy/', include('teddy.foo.urls')),

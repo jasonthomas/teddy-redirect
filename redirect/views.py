@@ -11,4 +11,7 @@ def get_short(request, short):
         found = Url.objects.get(short=short)
         return HttpResponseRedirect(found.url)
     except Exception:
-        return HttpResponseRedirect("http://google.com")
+        return HttpResponseRedirect("/new")
+
+def new_short(request):
+    return HttpResponse("Short not found in system", content_type="text/plain")
