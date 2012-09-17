@@ -6,6 +6,7 @@ import teddy.redirect.views
 
 urlpatterns = patterns('',
     url(r'^new$', teddy.redirect.views.new_short),
+    url(r'^recent$', teddy.redirect.views.recent),
     url(r'^(.*)$', teddy.redirect.views.get_short),
     # Examples:
     # url(r'^$', 'teddy.views.home', name='home'),
